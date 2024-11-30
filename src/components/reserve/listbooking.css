@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", sans-serif;
+}
+.toplist ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-pills {
+    border-radius: 5rem;
+}
+.toplist ul li a {
+    padding: 0.5em 0.8em;
+    font-size: 15px;
+    font-weight: '275';
+    display: block;
+    color: #000000;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.20);
+    background: linear-gradient(white, white) padding-box, linear-gradient(to top, #0075F4, #02F4BD) border-box;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.toplist ul li a.active {
+    font-weight: '300';
+    background: linear-gradient(to left,#02F4BD, #0075F4) padding-box, linear-gradient(to top, #0075F4, #02F4BD) border-box;
+    border: 1px solid transparent;
+}
+
+.toplist ul li a:hover:not(.active) {
+    color: #0075F4;
+}
+
+
+
+.box-card {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.20);
+    /* background: linear-gradient(white, white) padding-box, linear-gradient(to top, #0075F4, #02F4BD) border-box;
+    border: 1px solid transparent; */
+
+}
+.cardContent>.box-card {
+    border: 0.7px solid transparent;
+}
+.cardContent {
+    padding: 0.5em ;
+}
+
+.imgcard img {
+    margin-left: '2em';
+    height: 3em;
+    width: 3em;
+}
+.cardContent h5{
+    font-size: 16px;
+    font-weight: 400;
+}
+.cardContent p{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 275;
+}
+
+
+
+@media (min-width: 576px) {
+    .toplist ul li a {
+        padding: 0.6em 1em;
+        font-size: 18px;
+        font-weight: '275';
+        border: 2px solid transparent;
+    }
+
+    .toplist ul li a.active {
+        font-weight: '300';
+        border: 2px solid transparent;
+    }
+
+}
+
+
+
+@media (min-width: 768px) {
+    .toplist ul li a {
+        padding: 0.8em 1.2em;
+        font-size: 20px;
+        font-weight: '300';
+        border: 2px solid transparent;
+    }
+
+    .toplist ul li a.active {
+        font-weight: '400';
+        border: 2px solid transparent;
+    }
+    .box-card {
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.20);
+        /* background: linear-gradient(white, white) padding-box, linear-gradient(to top, #0075F4, #02F4BD) border-box;
+        border: 2px solid transparent; */
+    }
+}
+
+@media (min-width:  992px) {
+    .toplist ul li a {
+        padding: 1em 1.5em;
+        font-size: 25px;
+        font-weight: '300';
+        border: 3px solid transparent;
+
+    }
+
+    .toplist ul li a.active {
+        font-weight: '400';
+        border: 3px solid transparent;
+    }
+    .box-card {
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.20);
+        /* background: linear-gradient(white, white) padding-box, linear-gradient(to top, #0075F4, #02F4BD) border-box;
+        border: 3px solid transparent; */
+
+    }
+}
+
+.disabledorder {
+    color: gray; /* สีที่แสดงเมื่อถูก disabled */
+    pointer-events: none; /* ป้องกันการคลิก */
+    text-decoration: none; /* ไม่ให้มีเส้นใต้ */
+  }
+  

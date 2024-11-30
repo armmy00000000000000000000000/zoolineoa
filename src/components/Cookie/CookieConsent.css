@@ -1,0 +1,64 @@
+/* Overlay สำหรับทำให้เบลอพื้นหลัง */
+.cookie-consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* เพิ่มความทึบ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* ให้แน่ใจว่าอยู่เหนือองค์ประกอบอื่น ๆ */
+  }
+  
+  /* Popup ที่อยู่กลางหน้าจอ */
+  .cookie-consent-popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+    overflow-y: auto; /* เพิ่มการเลื่อนเมื่อเนื้อหายาว */
+  }
+  
+  .cookie-consent-popup h2 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  
+  .cookie-consent-popup h3 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .cookie-consent-popup p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .cookie-consent-popup ol {
+    margin: 0 0 15px 20px;
+  }
+  
+  .cookie-consent-popup button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cookie-consent-popup button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .cookie-consent-popup button:last-of-type {
+    background-color: #f44336;
+    color: white;
+  }
+  

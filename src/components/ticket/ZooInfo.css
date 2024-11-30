@@ -1,0 +1,35 @@
+/* ZooInfo.css */
+.zoo-info {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: -10px; /* เพิ่มพื้นที่ภายใน div */
+    border: 1px solid #ddd; /* เพิ่มขอบรอบๆ div */
+    border-radius: 8px; /* เพิ่มมุมมนให้กับ div */
+    background-color: #f9f9f9; /* เพิ่มสีพื้นหลัง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบาๆ */
+
+  }
+  
+  .zoo-image {
+    width: 100px; /* กำหนดความกว้างของภาพ */
+    height: 100px; /* กำหนดความสูงของภาพ */
+    border-radius: 50%; /* ทำให้ภาพเป็นวงกลม */
+    object-fit: cover; /* ครอบตัดภาพให้พอดี */
+    display: block;
+    margin: 0 auto; /* จัดกลางแนวนอน */
+  }
+  
+  .zoo-details {
+    margin-top: 10px; /* เพิ่มพื้นที่ระหว่างภาพและข้อมูล */
+  }
+  
+  .zoo-id, .zoo-name {
+    font-size: 16px; /* ขนาดตัวอักษร */
+    color: #333; /* สีตัวอักษร */
+    margin: 5px 0; /* เพิ่มพื้นที่ด้านบนและด้านล่าง */
+  }
+  
+  .zoo-id span, .zoo-name span {
+    font-weight: bold; /* ทำให้ตัวเลขและชื่อเข้มขึ้น */
+    color: #007bff; /* สีของตัวเลขและชื่อ */
+  }
+  
