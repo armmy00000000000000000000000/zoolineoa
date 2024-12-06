@@ -53,7 +53,7 @@ function Addticket() {
 
 
   const [countries, setCountries] = useState([]);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [countryid, setcountryid] = useState("");
@@ -754,12 +754,12 @@ function Addticket() {
                               <div className="">
 
                               <div className="d-flex justify-content-between">
-                                  <h3 className="mb-1" style={{ color: '#38b000' }}>
-                                    {selectedCountry
+                              <h3 className="mb-1" style={{ color: '#38b000' }}>
+                                    {imageUrl
                                       ? name
-                                        ? `${name} (${selectedCountry.iso})`
-                                        : `${selectedCountry.nicename} (${selectedCountry.iso})`
-                                      : "กรุณาเลือกสัญชาติ"}
+                                        ? `${name} (${name})`
+                                        : `${name} (${selectedCountry.iso})`
+                                      : "กรุณาเลือกสวนสัตว์"}
                                   </h3>
 
 

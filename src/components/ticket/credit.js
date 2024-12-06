@@ -46,6 +46,8 @@ const Credit = ({ data }) => {
     hasher();
   });
 
+  
+
   const handleCancel = (id) => {
     // console.log(id)
     const myHeaders = new Headers();

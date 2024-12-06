@@ -18,7 +18,7 @@ const ReportGenerator = ({ data }) => {
 
     useEffect(() => {
         Getdataticket();
-        initializeLiff();
+     
     }, [ticket]); // เมื่อ data.value1 เปลี่ยนแปลง
 
     useEffect(() => {
@@ -27,69 +27,111 @@ const ReportGenerator = ({ data }) => {
         setqrcode(data.value3);
     }, [data.value1, data.value2, data.value3]);
 
-    const initializeLiff = async () => {
-        try {
-            await liff.init({ liffId: 'YOUR_LIFF_ID' });
-            if (liff.isLoggedIn()) {
-                // User is logged in
-            } else {
-                liff.login();
-            }
-        } catch (error) {
-            console.error('Error initializing LIFF:', error);
-        }
-    };
+ 
+
+    // const generatePDF = async () => {
+    //     alert("กดยืนยันเพื่อดาวโหลด PDF...");
+
+    //     const pdf = new jsPDF('p', 'mm', 'a4');
+    //     const imgWidth = 210; // A4 width in mm
+    //     const margin = 10; // Margin in mm
+
+    //     await new Promise(resolve => setTimeout(resolve, 100));
+
+    //     const generatePage = async (index) => {
+    //         const pageContent = document.getElementById(`page-${index}`);
+    //         if (!pageContent) {
+    //             console.error(`No content found for page ${index}`);
+    //             return;
+    //         }
+
+    //         const canvas = await html2canvas(pageContent, { useCORS: true });
+    //         const imgData = canvas.toDataURL('image/png');
+    //         const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    //         // Only add a new page if it's not the first page
+    //         if (index > 1) pdf.addPage();
+    //         pdf.addImage(imgData, 'PNG', margin, margin, imgWidth - 2 * margin, imgHeight - 2 * margin);
+
+    //         // Add watermark
+    //         const text = 'zoo e-Ticket';
+    //         pdf.setFontSize(20);
+    //         pdf.setTextColor(0, 0, 0, 0.09);
+    //         const spacing = 56;
+
+    //         for (let x = -spacing; x < imgWidth; x += spacing) {
+    //             for (let y = -spacing; y < imgHeight; y += spacing) {
+    //                 pdf.text(text, x + margin, y + margin, { angle: -50 });
+    //             }
+    //         }
+    //     };
+
+    //     try {
+    //         await generatePage(1); // Adjust this if you have multiple pages
+            
+    //         pdf.save('zoo-e-ticket.pdf');
+    //         alert("ดาวน์โหลด PDF เสร็จเรียบร้อยแล้ว");
+    //     } catch (error) {
+    //         console.error('Error generating PDF:', error);
+    //         alert("เกิดข้อผิดพลาดในการดาวน์โหลด PDF");
+    //     }
+    // };
+
 
     const generatePDF = async () => {
         alert("กดยืนยันเพื่อดาวโหลด PDF...");
-
+    
         const pdf = new jsPDF('p', 'mm', 'a4');
         const imgWidth = 210; // A4 width in mm
         const margin = 10; // Margin in mm
-
+    
         await new Promise(resolve => setTimeout(resolve, 100));
-
+    
         const generatePage = async (index) => {
             const pageContent = document.getElementById(`page-${index}`);
             if (!pageContent) {
                 console.error(`No content found for page ${index}`);
                 return;
             }
-
+    
             const canvas = await html2canvas(pageContent, { useCORS: true });
             const imgData = canvas.toDataURL('image/png');
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-            // Only add a new page if it's not the first page
+    
             if (index > 1) pdf.addPage();
             pdf.addImage(imgData, 'PNG', margin, margin, imgWidth - 2 * margin, imgHeight - 2 * margin);
-
-            // Add watermark
+    
             const text = 'zoo e-Ticket';
             pdf.setFontSize(20);
             pdf.setTextColor(0, 0, 0, 0.09);
             const spacing = 56;
-
+    
             for (let x = -spacing; x < imgWidth; x += spacing) {
                 for (let y = -spacing; y < imgHeight; y += spacing) {
                     pdf.text(text, x + margin, y + margin, { angle: -50 });
                 }
             }
         };
-
+    
         try {
             await generatePage(1); // Adjust this if you have multiple pages
-            
-            pdf.save('zoo-e-ticket.pdf');
+            const blob = pdf.output("blob");
+            const url = URL.createObjectURL(blob);
+    
+            // Open download in Chrome
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'zoo-e-ticket.pdf';
+            a.click();
+    
+            URL.revokeObjectURL(url);
             alert("ดาวน์โหลด PDF เสร็จเรียบร้อยแล้ว");
         } catch (error) {
             console.error('Error generating PDF:', error);
             alert("เกิดข้อผิดพลาดในการดาวน์โหลด PDF");
         }
     };
-
-
-
+    
 
 
 
